@@ -1,0 +1,132 @@
+<template name="videoRoom">
+    
+    {{> nav}}
+    
+    <div class="room_wrapper row">
+    
+    <div class="video_wrapper columns">
+        
+        <div class="video_container">
+            
+            <video id="video" class="video-js vjs-flat-skin" controls>
+                
+                <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+                <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+                
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+                
+            </video>
+            
+            <div class="video_queue">
+                
+                {{#each queue}}
+                
+                    <a class="video">
+                        
+                        <p>{{name}}</p>
+                        
+                    </a>
+                
+                {{/each}}
+                
+            </div>
+      
+        </div>
+        
+        <div class="button-group">
+          <a id="add_youtube" class="button" data-open="youtube">Add YouTube</a>
+          <a id="add_upload" class="button">Upload</a>
+          <a id="add_stream" class="button">Live-Stream</a>
+        </div>
+        
+        <div class="reveal top" id="youtube" data-reveal>
+            
+          <form id="youtube_form">
+              
+              <input id="youtube_link" type="text" placeholder="Enter YouTube video link."/>
+              <!--<input type="submit" value="Add" class="button">-->
+              <a id="submit_youtube" class="button">Add to queue</a>
+              
+          </form>
+          
+          <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        
+        <a id="remove_room" class="button alert">Remove Room</a>
+      
+    </div>
+      
+      
+      
+      
+      <div class="chat_wrapper columns">
+          
+          <div class="chat_container">
+              
+              <div class="left">
+                  
+                  <div class="message_container">
+                      
+                      <img src="https://pbs.twimg.com/profile_images/3300511358/b995f3ad412c08db7db559010dd3b405_400x400.jpeg"/>
+                      
+                      <div class="message">
+                          <p>This is a test message.</p>
+                      </div>
+                      
+                  </div>
+                  
+                  <div class="textarea_container">
+                      
+                      <div class="emoticon_container">
+                          <a href=""></a>
+                      </div>
+                  
+                      <textarea placeholder="Enter your message"></textarea>
+                  
+                  </div>
+                  
+              </div>
+              
+              
+              <div class="right">
+                  
+                  
+                  <div class="user_container">
+                      
+                      <div class="user">
+                          
+                          <a href="#">
+                              
+                              colt082295
+                              
+                          </a>
+                          
+                      </div>
+                      
+                  </div>
+                  
+                  
+              </div>
+              
+              
+              
+              
+          </div>
+          
+          
+          
+          
+      </div>
+      
+      </div>
+    
+    
+    
+</template>

@@ -1,0 +1,28 @@
+<template name="home">
+    
+    {{> nav}}
+    
+    <body>
+        
+        
+        <h1>Test</h1>
+        
+        {{#each rooms}}
+        
+        
+            <a href="{{pathFor 'videoRoom'}}">
+                
+                <h2>{{roomName}}</h2>
+                <p>{{roomDescription}}</p>
+                
+            </a>
+        
+        
+        {{/each}}
+        
+        
+    </body>
+    
+    
+    
+</template>
